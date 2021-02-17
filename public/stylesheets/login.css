@@ -1,0 +1,86 @@
+.loginCard{
+    width: 95%;
+    height: auto;
+    margin:auto;
+    background-color: #EE434C;
+    border-radius: 15px;
+    margin-top: 10%;
+    margin-bottom: 86px;
+}
+.groupHero{
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Quicksand', sans-serif;
+    padding-bottom: 140px;
+}
+.heroLoginLeft{
+    width: 40%;
+    height: auto;
+}
+.heroLoginRight{
+    width: 35%;
+    height: auto;  
+}
+.heroLoginLeft p{
+    margin-top: 42%;
+    margin-left: 15%;
+    color: white;
+    font-size: 30px;
+}
+.heroLoginRight p{
+    font-size: 30px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30%;
+}
+.heroLoginRight h6{
+    color: white;
+    font-size: 12px;
+}
+.heroLoginRight input{
+    outline: none;
+    border: none;
+    width: 320px;
+    height: 35px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+.btnMasuk{
+    width: 100px;
+    height: 37px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: center;
+    color: #EE434C;
+    padding-top: 6px;
+}
+.heroLoginRight a{
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    .groupHero{
+        display: block;
+        justify-content: space-around;
+        margin: auto;
+    }
+    .heroLoginLeft{
+        text-align: center;
+        padding-top: 2px;
+        width: 90%;
+    }
+    .heroLoginRight{
+        text-align: center;
+        padding-bottom: 30px;
+        width: 100%;
+    }
+    .btnMasuk{
+        margin: auto;
+        margin-top: 20px;
+    }
+}

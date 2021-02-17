@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/adminPannel.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+        {{!-- fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+{{>header}}
+
+    <div class="container">
+        <div class="heroAdminGroup">
+            <div class="heroLeftAdmin">
+                <p>Selamat Datang Di <br>Halaman Admin</p>
+                <h6>Catat semua aktifitasmu</h6>
+                <h6>disini</h6>
+            </div>
+            <div class="heroRightAdmin">
+                <img src="/images/admin.png" alt="" width="625" height="387">
+            </div>
+        </div>
+        <div class="cardMenu">
+            <div class="groupCardMenu">
+                <div class="cardMenuLeft">
+                    <ul>
+                        <li><a href="/adminPanel">Pendataan Buku</a></li>
+                        <li><a href="/adminPanelBorrow">Peminjaman Buku</a></li>
+                        <li><div class="searchData"></div></li>
+                    </ul>
+                </div>
+                <div class="cardMenuRight">
+                    <input type="text" id="searchBox" autocomplete="off">
+                    <img src="/images/search.png" alt="" width="37" height="37">
+                </div>
+            </div>
+        </div>
+        <div class="showData">
+            <div class="leftShowData">
+                <form autocomplete="off" action="/add" method="POST">
+                    <input type="text" id="" placeholder="Masukkan Nama Buku" autocomplete="off" name="namaBuku" >
+                    <input type="text" id="" placeholder="Masukkan Kode Buku" autocomplete="off" name="kodeBuku" >
+                    <input type="text" id="" placeholder="Masukkan Nama Penerbit" autocomplete="off" name="penerbit" >
+                    <br><button type="submit" class="btn btn-secondary btn-sm">Simpan</button>
+                </form>
+            </div>
+            <div class="rightShowData" style="overflow-x: auto;">
+                <table style="width:100%">
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Buku</th>
+                        <th>Kode Buku</th>
+                        <th>Penerbit</th>
+                        <th>Tanggal Ditambahkan</th>
+                        <th colspan="2" id="actionTh">Aksi</th>
+                    </tr>
+                    {{#each data}}
+                    <tr>
+                        <td>{{incremented @index}}</td>
+                        <td>{{this.namaBuku}}</td>
+                        <td>{{this.kodeBuku}}</td>
+                        <td>{{this.penerbit}}</td>
+                        <td>{{this.tanggalDitambahkan}}</td>
+                        <td colspan="2" id="btnData">
+                            <a href="/delete/{{this._id}}"><button type="button" class="btn btn-secondary btn-sm" id="btnDelete">Hapus</button></a>
+                            <a href="/find/{{this._id}}"><button type="button" class="btn btn-secondary btn-sm">Edit</button></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

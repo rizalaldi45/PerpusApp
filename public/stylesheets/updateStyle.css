@@ -1,0 +1,33 @@
+.groupInputUpdate{
+    width: 30%;
+    height: 350px;
+    background-color: #ECEBEB;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 25%;
+}
+.groupInputUpdate form{
+    padding-top: 45px;
+}
+.groupInputUpdate input{
+    border: none;
+    outline: none;
+    height: 35px;
+    width: 280px;
+    border-radius: 10px;
+    padding: 0 15px 0 15px;
+    margin-top: 25px;
+    text-align: center;
+}
+.groupInputUpdate .btn{
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .groupInputUpdate{
+        width: 80%;
+        margin-top: 75%;
+    }
+}

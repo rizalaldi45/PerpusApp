@@ -1,0 +1,174 @@
+.heroAdminGroup{
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.heroLeftAdmin{
+    width: 40%;
+    height: 380px;
+    margin: 100px 0 0 20px;
+}
+.heroRightAdmin{
+    width: 40%;
+    height: 380px;
+    margin: 0 50px 0 0;
+}
+.heroLeftAdmin p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+.heroLeftAdmin h6{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+}
+.groupCardMenu{
+    width: 95%;
+    height: 90px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.cardMenu{
+    width: 100%;
+    height: 107px;
+    background-color: #ECEBEB;
+    border-radius: 15px;
+}
+.cardMenu ul li{
+    display: inline-block;
+    list-style-type: none;
+    padding: 40px 25px 0 0;
+    font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+}
+.cardMenuLeft ul li a{
+    color: black;
+    text-decoration: none;
+}
+.cardMenuLeft{
+    width: 30%;
+    height: 90px;
+}
+.cardMenuRight{
+    width: 60%;
+    height: 90px;
+}
+.cardMenuRight input{
+    width: 90%;
+    height: 55px;
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 25px;
+    padding: 30px;
+    margin-top: 24px;
+    border: none;
+    outline: none;
+}
+.cardMenuRight img{
+    margin-left: 23px;
+    cursor: pointer;
+}
+.showData{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+.leftShowData{
+    width: 35%;
+    height: 50%;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #ECEBEB;
+    border-radius: 15px;
+}
+.leftShowData form{
+    margin-top: 50px;
+}
+.leftShowData .btn{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.leftShowData input{
+    width: 80%;
+    height: 40px;
+    padding: 0 15px 0 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+    border: none;
+    outline: none;
+}
+.rightShowData{
+    width: 62%;
+    height: auto;
+    margin-bottom: 50px;
+}
+table{
+    font-family: 'Quicksand', sans-serif;
+    border-spacing: 25px;
+}
+table th, td{
+    padding: 15px;
+}
+#btnData{
+    display: flex;
+}
+#btnDelete{
+    margin-right: 7px;
+}
+#actionTh{
+    text-align: center;
+}
+@media only screen and (max-width: 1000px) {
+    .heroAdminGroup{
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+    .heroRightAdmin{
+        display: none;
+    }
+    .heroLeftAdmin{
+        width: 100%;
+        margin: 160px 0 0 0;
+    }
+    .groupCardMenu{
+        display: block;
+        text-align: center;
+    }
+    .cardMenu{
+        height: 220px;
+    }
+    .cardMenuLeft{
+        width: 100%;
+    }
+    .cardMenuRight{
+        width: 100%;
+    }
+    .cardMenuRight input{
+        width: 80%;
+    }
+    .showData{
+        display: block;
+    }
+    .leftShowData{
+        width: 100%;
+        height: 50%;
+    }
+    .rightShowData{
+        width: 95%;
+        margin: auto;
+        margin-top: 15px;
+    }
+    form{
+        padding-top: 35px;
+    }
+}

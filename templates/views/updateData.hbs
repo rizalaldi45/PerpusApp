@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/updateStyle.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+            {{!-- fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="groupInputUpdate">
+            <form autocomplete="off" action="/update/{{list._id}}" method="PATCH">
+                <input type="text" value="{{list.namaBuku}}" name="namaBuku">
+                <input type="text" value="{{list.kodeBuku}}" name="kodeBuku">
+                <input type="text" value="{{list.penerbit}}" name="penerbit">
+                <br><button type="submit" class="btn btn-secondary btn-sm">Simpan</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
