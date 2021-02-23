@@ -51,7 +51,7 @@
                     <br><button type="submit" class="btn btn-secondary btn-sm">Simpan</button>
                 </form>
             </div>
-            <div class="rightShowData" style="overflow-x: auto;">
+            <div class="rightShowData">
                 <table style="width:100%">
                     <tr>
                         <th>No</th>
@@ -74,7 +74,7 @@
                         <td>{{this.status}}</td>
                         <td colspan="2" id="btnData">
                             <a href="/deleteBorrowBook/{{this._id}}"><button type="button" class="btn btn-secondary btn-sm" id="btnDelete">Hapus</button></a>
-                            <a href="/find/{{this._id}}"><button type="button" class="btn btn-secondary btn-sm">Edit</button></a>
+                            <a href="/findPinjam/{{this._id}}"><button type="button" class="btn btn-secondary btn-sm">Edit</button></a>
                         </td>
                     </tr>
                     {{/each}}

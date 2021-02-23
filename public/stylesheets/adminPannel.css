@@ -167,6 +167,7 @@ table th, td{
         width: 95%;
         margin: auto;
         margin-top: 15px;
+        overflow-x: auto;
     }
     form{
         padding-top: 35px;

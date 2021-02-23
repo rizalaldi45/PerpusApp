@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 app.use(bodyParser.json())
+
+// routing
 app.get('/', (req, res)=>{
     res.render('index', {
         tittle : "Index Page"
@@ -41,6 +43,8 @@ app.get('/content', (req, res)=>{
         tittle : "Content Page"
     })
 })
+// end routing
+
 app.get('/adminPanel', async (req, res)=>{
     try{
         const response = await axios.get(`https://myperpusapi.herokuapp.com/get`)
@@ -108,6 +112,17 @@ app.get('/adminPanelBorrow', async (req, res)=>{
         res.render('/adminPanel2', {err : "Internal Server Error !"})
     }
 })
+app.get('/findPinjam/:id', async (req, res)=>{
+    try{
+        const response = await axios.get(`https://myperpusapi.herokuapp.com/getPinjam/${req.params.id}`)
+        const dataPinjam = response.data
+        res.render('updateData2', {
+            list2 : dataPinjam
+        })
+    }catch(e){
+        console.log(e)
+    }
+})
 app.get('/deleteBorrowBook/:id', async (req, res)=>{
     try{
         await axios.delete(`https://myperpusapi.herokuapp.com/deleteBorrow/${req.params.id}`)
@@ -116,14 +131,25 @@ app.get('/deleteBorrowBook/:id', async (req, res)=>{
         console.log(e)
     }
 })
-app.get('/addPeminjaman', async (req, res)=>{
+app.post('/addPeminjaman', async (req, res)=>{
     try{
-        await axios.post(`https://myperpusapi.herokuapp.com/pinjam?namaPeminjam=${req.query.namaPeminjam}&alamat=${req.query.alamat}&namaBuku=${req.query.namaBuku}&noTelp=${req.query.noTelp}`)
+        await axios.post(`https://myperpusapi.herokuapp.com/pinjam?namaPeminjam=${req.body.namaPeminjam}&alamat=${req.body.alamat}&namaBuku=${req.body.namaBuku}&noTelp=${req.body.noTelp}`)
         res.redirect('/adminPanelBorrow')
     }catch(e){
         console.log(e)
     }
 })
+app.get('/updatePinjamBuku/:id', async (req, res)=>{
+    try{
+        await axios.patch(`https://myperpusapi.herokuapp.com/updatePinjam/${req.params.id}?namaPeminjam=${req.query.namaPeminjam}&noTelp=${req.query.noTelp}&namaBuku=${req.query.namaBuku}&status=${req.query.status}`)
+        res.redirect('/adminPanelBorrow')
+    }catch(e){
+        console.log(e)
+    }
+})
+
+
+
 app.listen(port, ()=>{
     console.log(`Running on port ${port} !`)
 })

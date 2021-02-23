@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/updateStyle.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+            {{!-- fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="groupInputUpdate">
+            <form autocomplete="off" action="/updatePinjamBuku/{{list2._id}}" method="PATCH">
+                <input type="text" value="{{list2.namaPeminjam}}" name="namaPeminjam">
+                <input type="text" value="{{list2.noTelp}}" name="noTelp">
+                <input type="text" value="{{list2.namaBuku}}" name="namaBuku">
+                <input type="text" value="{{list2.status}}" name="status">
+                <br><button type="submit" class="btn btn-secondary btn-sm" style="margin-bottom: 25px">Simpan</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
