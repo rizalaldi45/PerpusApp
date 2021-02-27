@@ -4,6 +4,7 @@ let path = require('path')
 let axios = require('axios')
 let bodyParser = require('body-parser')
 let app = express()
+let auth = require('../middleware/auth')
 
 let port = process.env.PORT || 3000
 
