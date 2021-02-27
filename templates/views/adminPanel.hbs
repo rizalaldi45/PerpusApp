@@ -36,8 +36,9 @@
                     </ul>
                 </div>
                 <div class="cardMenuRight">
-                    <input type="text" id="searchBox" autocomplete="off">
-                    <img src="/images/search.png" alt="" width="37" height="37">
+                    <form action="/searchBook" method="GET">
+                        <input type="text" id="searchBox" autocomplete="off" name="query" placeholder="Masukkan nama buku">
+                    </form>
                 </div>
             </div>
         </div>
@@ -74,6 +75,10 @@
                     </tr>
                     {{/each}}
                 </table>
+                <div class="pagination">
+                    <a href="/adminPanelPrev"><button type="button" class="btn btn-secondary btn-sm">Prev</button></a>
+                    <a href="/adminPanelNext"><button type="button" class="btn btn-secondary btn-sm">Next</button></a>
+                </div>
             </div>
         </div>
     </div>

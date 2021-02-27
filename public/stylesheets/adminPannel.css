@@ -58,7 +58,7 @@
     height: 90px;
 }
 .cardMenuRight input{
-    width: 90%;
+    width: 100%;
     height: 55px;
     background-color: white;
     font-family: 'Quicksand', sans-serif;
@@ -68,8 +68,8 @@
     border: none;
     outline: none;
 }
-.cardMenuRight img{
-    margin-left: 23px;
+.cardMenuRight #btnSearch{
+    width: 20px;
     cursor: pointer;
 }
 .showData{
@@ -127,6 +127,15 @@ table th, td{
 #actionTh{
     text-align: center;
 }
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.pagination button{
+margin-left: 10px;
+}
 @media only screen and (max-width: 1000px) {
     .heroAdminGroup{
         display: block;
@@ -145,7 +154,7 @@ table th, td{
         text-align: center;
     }
     .cardMenu{
-        height: 220px;
+        height: 200px;
     }
     .cardMenuLeft{
         width: 100%;
@@ -153,8 +162,12 @@ table th, td{
     .cardMenuRight{
         width: 100%;
     }
+    .cardMenuRight form{
+        margin-top: -50px;
+    }
     .cardMenuRight input{
         width: 80%;
+        margin-bottom: 25px;
     }
     .showData{
         display: block;

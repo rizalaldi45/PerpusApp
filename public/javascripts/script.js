@@ -50,8 +50,3 @@ const getDataFromServer = async (keyword)=>{
             console.log(e)
         }
 }
-
-
-
-
-

@@ -46,9 +46,47 @@ app.get('/content', (req, res)=>{
 })
 // end routing
 
+// paginate manipulation
+let a = 1
+adds = ()=>{
+    a++;
+}
+mins = ()=>{
+    if(a === 1){
+        mins() = null;
+        alert("Anda Berada Di Halaman Awal")	
+     }
+    a--;
+}
+// end
+
 app.get('/adminPanel', async (req, res)=>{
     try{
         const response = await axios.get(`https://myperpusapi.herokuapp.com/get`)
+        const bookData = response.data
+        res.render('adminPanel', {
+            data : bookData
+        })
+    }catch(e){
+        res.render('adminPanel', {err : "Internal Server Error !"})
+    }
+})
+app.get('/adminPanelNext', async (req, res)=>{
+    adds()
+    try{
+        const response = await axios.get(`https://myperpusapi.herokuapp.com/get?page=${a}`)
+        const bookData = response.data
+        res.render('adminPanel', {
+            data : bookData
+        })
+    }catch(e){
+        res.render('adminPanel', {err : "Internal Server Error !"})
+    }
+})
+app.get('/adminPanelPrev', async (req, res)=>{
+    mins()
+    try{
+        const response = await axios.get(`https://myperpusapi.herokuapp.com/get?page=${a}`)
         const bookData = response.data
         res.render('adminPanel', {
             data : bookData
@@ -100,6 +138,19 @@ app.get('/update/:id', async (req, res)=>{
         console.log(e)
     }
 })
+app.get('/searchBook', async (req, res)=>{
+    try{
+        const response = await axios.get(`https://myperpusapi.herokuapp.com/cariBuku?namaBuku=${req.query.query}`)
+        const bookData = response.data
+        res.render('adminPanel', {
+            data : bookData
+        })
+    }catch{
+        res.render('adminPanel', {err : "Internal Server Error !"})
+    }
+})
+
+
 // peminjaman Buku
 
 app.get('/adminPanelBorrow', async (req, res)=>{
@@ -148,7 +199,17 @@ app.get('/updatePinjamBuku/:id', async (req, res)=>{
         console.log(e)
     }
 })
-
+app.get('/searchBorrow', async (req, res)=>{
+    try{
+        const response = await axios.get(`https://myperpusapi.herokuapp.com/cariDataPinjam?namaPeminjam=${req.query.query}`)
+        const dataPinjam = response.data
+        res.render('adminPanel2', {
+            data2 : dataPinjam
+        })
+    }catch{
+        res.render('adminPanel', {err : "Internal Server Error !"})
+    }
+})
 
 
 app.listen(port, ()=>{
